@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(192, 187, 187);
+    margin: 0;
+    padding: 0;
+}
+
+
+main{display: flex;
+text-align: center;
+height: 150px;
+justify-content: space-between;
+font-size: 30px;
+}
+button {
+    
+}
+
+.promo1{
+    border: 4px solid rgb(8, 8, 110);
+    border-radius: 7px;
+    height: 250px;
+    width: 500px;
+    margin: 40px;
+    padding-top: 40px;
+    color: rgb(192, 187, 187);
+    text-align: center;
+    background-color:rgb(8, 8, 110);
+}
+
+.promo2{
+    border: 4px solid rgb(8, 8, 110);
+    border-radius: 7px;
+    height: 250px;
+    width: 500px;
+    margin: 40px;
+    padding-top: 40px;
+    color: rgb(192, 187, 187);
+    background-color:rgb(8, 8, 110);
+}
+
+.promo3{
+    border: 4px solid  rgb(8, 8, 110);
+    border-radius: 7px;
+    height: 250px;
+    width: 500px;
+    margin: 40px;
+    padding-top: 40px;
+    color: rgb(192, 187, 187);
+    background-color:rgb(8, 8, 110);
+}
+
+.detail {
+    color:  rgb(8, 8, 110);
+    background-color:rgb(192, 187, 187); 
+    border: 2px solid rgb(8, 8, 110);
+    border-radius: 5px;
+    font-size: 20px; 
+    padding: 10px 20px; 
+    width: 150px; 
+    height: 50px; 
+    cursor: pointer;
+}
+
+.modif{
+    color:  rgb(8, 8, 110);
+    background-color:rgb(192, 187, 187); 
+    border: 2px solid rgb(8, 8, 110);
+    border-radius: 5px;
+    font-size: 20px; 
+    padding: 10px 20px; 
+    width: 150px; 
+    height: 50px; 
+    cursor: pointer;
+
+}
+
+.supp{
+    color:  rgb(8, 8, 110);
+    background-color:rgb(192, 187, 187); 
+    border: 2px solid rgb(8, 8, 110);
+    border-radius: 5px;
+    font-size: 20px; 
+    padding: 10px 20px; 
+    width: 150px; 
+    height: 50px; 
+    cursor: pointer;
+}

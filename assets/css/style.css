@@ -1,0 +1,90 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(192, 187, 187);
+    margin: 0;
+    padding: 0;
+}
+header{
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+header img{
+    width: auto;
+    height: auto;
+}
+#list-btn{
+    width: 200px;
+    height: 50px;
+    background-color: rgb(9, 9, 96);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+#list-btn:hover{
+    background-color: rgb(59, 108, 254);
+}
+h2{
+    text-align: center;
+    color: rgb(9, 9, 96);
+}
+.equipe{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 50px;
+    align-items: center;
+}
+.bloc1{
+    display: flex;
+    border: 2px solid rgb(9, 9, 96);
+    border-radius: 15px;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    height: 350px;
+   padding-top: 30px;
+}
+.bloc2{
+    display: flex;
+    border: 2px solid rgb(9, 9, 96);
+    border-radius: 15px;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    height: 350px;
+    padding-top: 30px;
+}
+.photolucas img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.photoseb img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.reseaux img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+footer{
+    background-color: rgb(9, 9, 96);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    text-align: center;
+}
+.contact a{
+text-decoration: none;
+color: white;
+}
+.contact a:hover{
+    color: rgb(59, 108, 254);
+}
