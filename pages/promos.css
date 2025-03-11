@@ -5,30 +5,76 @@ body {
     padding: 0;
 }
 
-
-main{display: flex;
-text-align: center;
-height: 150px;
-justify-content: space-between;
-font-size: 30px;
-}
-button {
-    
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
-.promo1{
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.accueil {
+    margin-top: 5px;
+}
+
+main {
+    display: flex;
+    text-align: center;
+    height: 150px;
+    justify-content: space-between;
+    font-size: 30px;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+header img {
+    width: auto;
+    height: auto;
+}
+
+#list-btn {
+    width: 200px;
+    height: 50px;
+    background-color: rgb(9, 9, 96);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 20px;
+}
+
+#list-btn:hover {
+    background-color: rgb(59, 108, 254);
+}
+
+.promos {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.promo1 {
     border: 4px solid rgb(8, 8, 110);
     border-radius: 7px;
     height: 250px;
-    width: 500px;
+    width: 90%;
     margin: 40px;
     padding-top: 40px;
     color: rgb(192, 187, 187);
     text-align: center;
-    background-color:rgb(8, 8, 110);
+    background-color: rgb(8, 8, 110);
 }
 
-.promo2{
+.promo2 {
     border: 4px solid rgb(8, 8, 110);
     border-radius: 7px;
     height: 250px;
@@ -36,53 +82,168 @@ button {
     margin: 40px;
     padding-top: 40px;
     color: rgb(192, 187, 187);
-    background-color:rgb(8, 8, 110);
+    background-color: rgb(8, 8, 110);
 }
 
-.promo3{
-    border: 4px solid  rgb(8, 8, 110);
+.promo3 {
+    border: 4px solid rgb(8, 8, 110);
     border-radius: 7px;
     height: 250px;
     width: 500px;
     margin: 40px;
     padding-top: 40px;
     color: rgb(192, 187, 187);
-    background-color:rgb(8, 8, 110);
+    background-color: rgb(8, 8, 110);
 }
 
 .detail {
-    color:  rgb(8, 8, 110);
-    background-color:rgb(192, 187, 187); 
+    color: rgb(8, 8, 110);
+    background-color: rgb(192, 187, 187);
     border: 2px solid rgb(8, 8, 110);
     border-radius: 5px;
-    font-size: 20px; 
-    padding: 10px 20px; 
-    width: 150px; 
-    height: 50px; 
-    cursor: pointer;
-}
-
-.modif{
-    color:  rgb(8, 8, 110);
-    background-color:rgb(192, 187, 187); 
-    border: 2px solid rgb(8, 8, 110);
-    border-radius: 5px;
-    font-size: 20px; 
-    padding: 10px 20px; 
-    width: 150px; 
-    height: 50px; 
+    font-size: 20px;
+    padding: 10px 20px;
+    width: 150px;
+    height: 50px;
     cursor: pointer;
 
 }
 
-.supp{
-    color:  rgb(8, 8, 110);
-    background-color:rgb(192, 187, 187); 
+.detail:hover {
+    background-color: rgb(59, 108, 254);
+}
+
+#buttons:hover {
+    background-color: rgb(59, 108, 254);
+}
+
+.modif {
+    color: rgb(8, 8, 110);
+    background-color: rgb(192, 187, 187);
     border: 2px solid rgb(8, 8, 110);
     border-radius: 5px;
-    font-size: 20px; 
-    padding: 10px 20px; 
-    width: 150px; 
-    height: 50px; 
+    font-size: 20px;
+    padding: 10px 20px;
+    width: 150px;
+    height: 50px;
     cursor: pointer;
+
+}
+
+
+.modif:hover {
+    background-color: rgb(59, 108, 254);
+}
+
+.supp {
+    color: rgb(8, 8, 110);
+    background-color: rgb(192, 187, 187);
+    border: 2px solid rgb(8, 8, 110);
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 10px 20px;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.supp:hover {
+    background-color: rgb(59, 108, 254);
+}
+
+.reseaux img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.content {
+    flex: 1;
+}
+
+footer {
+    background-color: rgb(9, 9, 96);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.contact a {
+    text-decoration: none;
+    color: white;
+}
+
+.contact a:hover {
+    color: rgb(59, 108, 254);
+}
+
+/* Écrans de 768px ou moins (tablettes, smartphones) */
+@media (max-width: 768px) {
+    .promos {
+        flex-direction: column;
+        /* Passe les promos en colonne */
+        align-items: center;
+        /* Centre les éléments */
+    }
+
+    .promo1,
+    .promo2,
+    .promo3 {
+        width: 90%;
+        /* Réduit la largeur à 90% de l'écran */
+        margin: 20px 0;
+        /* Ajoute des marges au-dessus et en dessous */
+    }
+
+    #list-btn {
+        width: 100%;
+        /* Bouton occupe toute la largeur */
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 img {
+        width: 150px;
+    }
+
+    .detail,
+    .modif,
+    .supp {
+        font-size: 16px;
+        /* Réduit la taille de la police des boutons */
+        padding: 8px 16px;
+        /* Réduit l'espacement interne */
+        width: auto;
+        /* Ajuste la largeur automatiquement */
+    }
+}
+
+.promos {
+    display: flex;
+    flex-wrap: wrap;
+    /* Les enfants passent à la ligne si l'espace manque */
+    justify-content: center;
+    /* Centre les éléments sur les petits écrans */
+}
+
+.promo1,
+.promo2,
+.promo3 {
+
+    max-width: 500px;
+    /* Limite la largeur pour les grands écrans */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    /* Conserve le ratio d'origine */
 }
