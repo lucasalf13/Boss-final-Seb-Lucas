@@ -89,25 +89,25 @@ document.getElementsByClassName('close-btn')[0].addEventListener('click', functi
     document.getElementById('promo-modal').style.display = 'none';
 });
 
-document.getElementById('promo-form').addEventListener('submit', function(event) {
+document.getElementById('promo-form').addEventListener('submit', async function(event) {
     event.preventDefault();
     const promoName = document.getElementById('promo-name').value;
 
-    fetch('http://146.59.242.125:3009/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ name: promoName })
-    })
-    .then(response => response.json())
-    .then(data => {
+    try {
+        const response = await fetch('http://146.59.242.125:3009/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name: promoName })
+        });
+        const data = await response.json();
         console.log('Success:', data);
         document.getElementById('promo-modal').style.display = 'none';
-    })
-    .catch((error) => {
+    } catch (error) {
         console.error('Error:', error);
-    });
+    }
 });
+
 
 
