@@ -70,6 +70,10 @@ header img {
     border-radius: 10px;
 }
 
+#list-btn2:hover {
+    background-color: rgb(59, 108, 254);
+}
+
 .promos {
     display: flex;
     text-align: center;
