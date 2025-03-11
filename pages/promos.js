@@ -1,3 +1,4 @@
+const urlBase = "http://146.59.242.125:3009/"
 
 function handleModify(button) {
     const promoDiv = button.parentElement;
@@ -19,29 +20,24 @@ function handleModify(button) {
     cancelButton.textContent = 'Annuler';
     cancelButton.className = 'cancel-btn';
 
-    // Ajouter les éléments à la boîte de confirmation
     confirmBox.appendChild(input);
     confirmBox.appendChild(saveButton);
     confirmBox.appendChild(cancelButton);
     promoDiv.appendChild(confirmBox);
 
-    // Gestion du clic sur "Confirmer"
     saveButton.addEventListener('click', () => {
-        promoText.textContent = input.value; // Met à jour le texte
-        confirmBox.remove(); // Supprime la boîte de confirmation
+        promoText.textContent = input.value;
+        confirmBox.remove();
     });
 
-    // Gestion du clic sur "Annuler"
     cancelButton.addEventListener('click', () => {
-        confirmBox.remove(); // Supprime la boîte de confirmation
+        confirmBox.remove(); 
     });
 }
 
-// Fonction pour gérer le bouton "Supprimer"
 function handleDelete(button) {
-    const promoDiv = button.parentElement; // Récupère le conteneur parent
+    const promoDiv = button.parentElement;
 
-    // Ajouter une boîte de confirmation sous le texte
     const confirmBox = document.createElement('div');
     confirmBox.className = 'confirm-box';
 
@@ -56,32 +52,62 @@ function handleDelete(button) {
     cancelButton.textContent = 'Annuler';
     cancelButton.className = 'cancel-btn';
 
-    // Ajouter les éléments à la boîte de confirmation
     confirmBox.appendChild(confirmMessage);
     confirmBox.appendChild(deleteButton);
     confirmBox.appendChild(cancelButton);
     promoDiv.appendChild(confirmBox);
 
-    // Gestion du clic sur "Supprimer"
     deleteButton.addEventListener('click', () => {
-        promoDiv.remove(); // Supprime la promo
+        promoDiv.remove();
     });
 
-    // Gestion du clic sur "Annuler"
     cancelButton.addEventListener('click', () => {
-        confirmBox.remove(); // Supprime la boîte de confirmation
+        confirmBox.remove(); 
     });
 }
 
-// Ajouter des écouteurs d'événements aux boutons
 document.querySelectorAll('.modif').forEach(button => {
     button.addEventListener('click', function () {
-        handleModify(this); // Passe le bouton cliqué en paramètre
+        handleModify(this);
     });
 });
 
 document.querySelectorAll('.supp').forEach(button => {
     button.addEventListener('click', function () {
-        handleDelete(this); // Passe le bouton cliqué en paramètre
+        handleDelete(this);
     });
 });
+
+
+
+document.getElementById('list-btn2').addEventListener('click', function() {
+    document.getElementById('promo-modal').style.display = 'block';
+});
+
+
+document.getElementsByClassName('close-btn')[0].addEventListener('click', function() {
+    document.getElementById('promo-modal').style.display = 'none';
+});
+
+document.getElementById('promo-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const promoName = document.getElementById('promo-name').value;
+
+    fetch('http://146.59.242.125:3009/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name: promoName })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        document.getElementById('promo-modal').style.display = 'none';
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+});
+
+

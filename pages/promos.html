@@ -39,13 +39,29 @@
                 </div>
             </div>
 
-
             <div>
                 <button id="list-btn2">Ajouter Promotion</button>
             </div>
 
-            <div class="accueil"></div>
+            <div id="promo-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <form id="promo-form">
+                        <label for="promo-name">Nom de la promotion: </label>
+                        <input type="text" id="promo-name" name="name" required>
+                        <label for="name">Date de début: </label>
+                        <input type="date" id="name" name="startDate" required>
+                        <label for="name">Date de fin: </label>
+                        <input type="date" id="name" name="endDate" required>
+                        <label for="name">Description de la formation: </label>
+                        <input type="text" id="name" name="formationDescription" required>
 
+                        <button type="submit">Ajouter</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="accueil"></div>
 
             <a href="../index.html"><button id="list-btn">Retour Accueil</button></a>
     </div>
