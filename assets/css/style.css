@@ -11,7 +11,7 @@ header{
     padding: 0;
 }
 header img{
-    width: auto;
+    max-width: 100%;
     height: auto;
 }
 #list-btn{
@@ -36,7 +36,7 @@ h2{
     margin-top: 50px;
     align-items: center;
 }
-.bloc1{
+.bloc1, .bloc2{
     display: flex;
     border: 2px solid rgb(9, 9, 96);
     border-radius: 15px;
@@ -44,26 +44,10 @@ h2{
     align-items: center;
     flex-direction: column;
     width: 350px;
-    height: 350px;
+    min-height: 350px;
    padding-top: 30px;
 }
-.bloc2{
-    display: flex;
-    border: 2px solid rgb(9, 9, 96);
-    border-radius: 15px;
-    text-align: center;
-    align-items: center;
-    flex-direction: column;
-    width: 350px;
-    height: 350px;
-    padding-top: 30px;
-}
-.photolucas img{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-}
-.photoseb img{
+.photolucas img, .photoseb img{
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -80,6 +64,7 @@ footer{
     justify-content: space-around;
     margin-top: 50px;
     text-align: center;
+    padding: 20px 0;
 }
 .contact a{
 text-decoration: none;
@@ -87,4 +72,61 @@ color: white;
 }
 .contact a:hover{
     color: rgb(59, 108, 254);
+}
+@media screen and (max-width: 895px) {
+    .equipe {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .bloc1, .bloc2 {
+        width: 90%;
+        max-width: 350px;
+        margin: auto;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 480px) {
+    header img {
+        width: 80%;
+    }
+
+    #list-btn {
+        width: 80%;
+        max-width: 200px;
+    }
+
+    .bloc1, .bloc2 {
+        width: 95%;
+        height: auto;
+        padding: 20px 10px;
+    }
+
+    .photolucas img, .photoseb img {
+        width: 100px;
+        height: 100px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+
+    .contact p {
+        font-size: 0.9rem;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .equipe {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .bloc1, .bloc2 {
+        width: 400px;
+        height: 400px;
+    }
 }
