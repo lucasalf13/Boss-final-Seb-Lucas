@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./eleves.css">
-    <title>Page élèves</title>
+    <title>Gestion des élèves</title>
 </head>
 
 <body>
@@ -16,27 +16,44 @@
         </div>
     </header>
     <main>
-        <section id="list">
-            <div>
-                <form class="modal">
+        <div class="titrebtn">
+            <h2>Gestion des élèves</h2>
+        <button id="addEleveBtn">Ajouter un élève</button>
+        </div>
+        
+        <section id="eleveSection">
+            <ul id="eleve-list"></ul>
+        </section>
+
+        <div id="modal-ajouter" class="modal">
+            <div class="modal-content">
+                <span id="close-modal" class="close">&times;</span>
+                <h3>Ajouter un élève</h3>
+                <form id="addEleveForm">
                     <label for="firstName"><strong>Prénom :</strong></label>
                     <input id="firstName" type="text"><br>
+
                     <label for="lastName"><strong>Nom :</strong></label>
                     <input id="lastName" type="text"><br>
+
                     <label for="age"><strong>Age :</strong></label>
                     <input id="age" type="number"><br>
+
                     <label for="avatar"><strong>Avatar :</strong></label>
                     <input id="avatar" type="file">
-                    <div class="boutons">
-                        <button id="fermer">Fermer</button>
-                        <button id="confirmer">Confirmer</button>
-                    </div>
 
+                    <button type="submit">Ajouter</button>
                 </form>
             </div>
-
-
-        </section>
+        </div>
+        <div id="modal-message" class="modal">
+            <div class="modal-content">
+                <span id="close-modal" class="close">&times;</span>
+                <p id="modal-message-text"></p>
+                <button id="modal-confirm">Confirmer</button>
+                <button id="modal-cancel">Annuler</button>
+            </div>
+        </div>
     </main>
     <footer>
         <div class="contact">
