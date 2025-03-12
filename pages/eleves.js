@@ -1,5 +1,5 @@
-const authToken = "d4024b64-58b0-4cc9-a496-428099b18761"; // Token d'authentification
-const urlBase = "http://146.59.242.125:3009/"; // URL de l'API
+const authToken = "d4024b64-58b0-4cc9-a496-428099b18761";
+const urlBase = "http://146.59.242.125:3009/";
 
 const modal = document.getElementById('modal-message'); // Modal de message
 const modalMessageText = document.getElementById('modal-message-text'); // Texte du message dans la modal
@@ -29,7 +29,6 @@ async function loadEleves(promotionId) {
         const eleves = await response.json();
         displayEleves(eleves);
     } catch (error) {
-        console.error(error);
         openModal('Erreur lors de la récupération des élèves');
     }
 }
@@ -78,7 +77,7 @@ addEleveForm.addEventListener('submit', async (event) => {
     const firstName = document.getElementById('firstName').value;
     const lastName = document.getElementById('lastName').value;
     const age = document.getElementById('age').value;
-    const avatar = document.getElementById('avatar').value
+    const avatar = document.getElementById('avatar').files[0]
 
     try {
         const response = await fetch(urlBase + `promos/${currentPromotionId}/eleves`, {
@@ -99,7 +98,6 @@ addEleveForm.addEventListener('submit', async (event) => {
         modalAjout.style.display = 'none'; // Fermer la modal
         openModal('Élève ajouté avec succès');
     } catch (error) {
-        console.error(error);
         openModal('Erreur lors de l\'ajout de l\'élève');
     }
 });
@@ -128,7 +126,6 @@ async function deleteEleve(id) {
             openModal('Élève supprimé avec succès');
             loadEleves(currentPromotionId); // Recharger la liste des élèves après suppression
         } catch (error) {
-            console.error(error);
             openModal('Erreur lors de la suppression de l\'élève');
         }
     });
