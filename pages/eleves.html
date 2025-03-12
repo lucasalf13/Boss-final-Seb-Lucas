@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./eleves.css">
     <title>Page élèves</title>
 </head>
+
 <body>
     <header>
         <h1><img src="../assets/images/logo ecole.png" alt="logo ecole"></h1>
@@ -14,14 +16,37 @@
         </div>
     </header>
     <main>
+        <section id="list">
+            <div>
+                <form class="modal">
+                    <label for="firstName"><strong>Prénom :</strong></label>
+                    <input id="firstName" type="text"><br>
+                    <label for="lastName"><strong>Nom :</strong></label>
+                    <input id="lastName" type="text"><br>
+                    <label for="age"><strong>Age :</strong></label>
+                    <input id="age" type="number"><br>
+                    <label for="avatar"><strong>Avatar :</strong></label>
+                    <input id="avatar" type="file">
+                    <div class="boutons">
+                        <button id="fermer">Fermer</button>
+                        <button id="confirmer">Confirmer</button>
+                    </div>
 
+                </form>
+            </div>
+
+
+        </section>
     </main>
     <footer>
         <div class="contact">
-            <a href="https://maps.app.goo.gl/3tfzaLV7CTbCqZ7YA" target="_blank"><p>📍 Adresse : 155 Rue du Dirigeable, 13400 Aubagne 📍</p></a>
+            <a href="https://maps.app.goo.gl/3tfzaLV7CTbCqZ7YA" target="_blank">
+                <p>📍 Adresse : 155 Rue du Dirigeable, 13400 Aubagne 📍</p>
+            </a>
             <p>Numéro : 06 01 02 03 04</p>
         </div>
     </footer>
     <script src="./eleves.js"></script>
 </body>
+
 </html>
