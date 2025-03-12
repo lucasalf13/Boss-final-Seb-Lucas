@@ -60,6 +60,7 @@ header img {
 }
 
 #list-btn2 {
+   
     width: 200px;
     height: 50px;
     background-color: rgb(159, 161, 161);
@@ -255,24 +256,25 @@ img {
 
 
 #promo-modal{
-display: flex;
+display: none;
 justify-content: center;
 
 }
 
 .modal {
-    display: flex;
-    justify-content: center;
+    display: none;
     position: fixed;
-    top: 15%;
-    left: 39.4%;
-    max-width: 600px;
-    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centre la modale */
+    width: 400px;
+    height: auto;
     background: white;
-    color: rgb(9, 9, 96);
-    margin: 0;
-   
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
+
 
 .modal-content {
     background: rgb(192, 187, 187);

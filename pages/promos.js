@@ -35,6 +35,11 @@ function handleModify(button) {
     });
 }
 
+const startDate = document.getElementById('start-date').value;
+const endDate = document.getElementById('end-date').value;
+const formationDescription = document.getElementById('formation-description').value;
+
+
 function handleDelete(button) {
     const promoDiv = button.parentElement;
 
@@ -84,10 +89,13 @@ document.getElementById('list-btn2').addEventListener('click', function() {
     document.getElementById('promo-modal').style.display = 'block';
 });
 
+const closeButton = document.querySelector('.close-btn');
+if (closeButton) {
+    closeButton.addEventListener('click', function () {
+        document.getElementById('promo-modal').style.display = 'none';
+    });
+}
 
-document.getElementsByClassName('close-btn')[0].addEventListener('click', function() {
-    document.getElementById('promo-modal').style.display = 'none';
-});
 
 document.getElementById('promo-form').addEventListener('submit', async function(event) {
     event.preventDefault();
