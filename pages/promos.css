@@ -15,7 +15,6 @@ body {
     min-height: 100vh;
 }
 
-
 .accueil {
     margin-top: 5px;
 }
@@ -47,7 +46,6 @@ main {
     font-size: 28px;
     cursor: pointer;
 }
-
 
 header {
     text-align: center;
@@ -112,8 +110,6 @@ header img {
     /* Optionnel : ajouter une ombre pour plus de relief */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
-
-
 
 .detail {
     color: rgb(8, 8, 110);
