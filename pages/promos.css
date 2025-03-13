@@ -7,15 +7,14 @@ body {
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
-body {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 }
+
 
 .accueil {
     margin-top: 5px;
@@ -24,12 +23,30 @@ body {
 main {
     display: flex;
     text-align: center;
-    height: 150px;
+    min-height: 150px;
     justify-content: space-between;
     font-size: 30px;
     flex-direction: column;
 }
 
+#detail-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.close-detail {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
 
 
 header {
@@ -77,43 +94,26 @@ header img {
 
 .promos {
     display: flex;
-    text-align: center;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Espace de 20px entre chaque promo */
+    padding: 20px;
 }
 
-.promo1 {
+.promo {
     border: 4px solid rgb(8, 8, 110);
     border-radius: 7px;
-    height: 250px;
-    width: 90%;
-    margin: 40px;
-    padding-top: 40px;
+    padding: 20px;
+    background-color: rgb(8, 8, 110);
     color: rgb(192, 187, 187);
     text-align: center;
-    background-color: rgb(8, 8, 110);
+    width: 100%;
+    max-width: 500px;
+    /* Optionnel : ajouter une ombre pour plus de relief */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-.promo2 {
-    border: 4px solid rgb(8, 8, 110);
-    border-radius: 7px;
-    height: 250px;
-    width: 500px;
-    margin: 40px;
-    padding-top: 40px;
-    color: rgb(192, 187, 187);
-    background-color: rgb(8, 8, 110);
-}
 
-.promo3 {
-    border: 4px solid rgb(8, 8, 110);
-    border-radius: 7px;
-    height: 250px;
-    width: 500px;
-    margin: 40px;
-    padding-top: 40px;
-    color: rgb(192, 187, 187);
-    background-color: rgb(8, 8, 110);
-}
 
 .detail {
     color: rgb(8, 8, 110);
@@ -275,7 +275,6 @@ justify-content: center;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-
 .modal-content {
     background: rgb(192, 187, 187);
     margin: 10% auto;
@@ -289,7 +288,7 @@ justify-content: center;
 }
 
 .close-btn {
-    color: #aaa;
+    color: #474444;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -297,7 +296,7 @@ justify-content: center;
 
 .close-btn:hover,
 .close:focus {
-    color: black;
+    color: rgb(45, 119, 239);
     text-decoration: none;
     cursor: pointer;
 }

@@ -9,67 +9,59 @@
 </head>
 
 <body>
-    <div class="content">
-        <header>
-            <h1><img src="../assets/images/logo ecole.png" alt="logo ecole"></h1>
-            <div>
-                <button id="list-btn">Liste des promotions</button>
+    <header>
+        <h1><img src="../assets/images/logo ecole.png" alt="logo ecole"></h1>
+        <div>
+            <button id="list-btn">Liste des promotions</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="promos">
+
+        </div>
+        <p id="promo-message" style="color: red; display: none;"></p>
+
+        <div>
+            <button id="list-btn2">Ajouter Promotion</button>
+        </div>
+
+        <div id="promo-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <form id="promo-form">
+                    <label for="promo-name">Nom de la promotion: </label><br>
+                    <input type="text" id="promo-name" name="name" required><br>
+                    <label for="date">Date de début: </label><br>
+                    <input type="date" id="promo-start" name="startDate" required><br>
+                    <label for="date">Date de fin: </label><br>
+                    <input type="date" id="promo-end" name="endDate" required><br>
+                    <label for="name">Description de la formation: </label><br>
+                    <input type="text" id="promo-description" name="formationDescription" required><br>
+                    <button type="submit">Ajouter</button>
+                </form>
             </div>
-        </header>
-
-        <main>
-            <div class="promos">
-                <div class="promo1">
-                    <H2>PROMO 1</H2>
-                    <button class="detail">Détails</button>
-                    <button class="modif">Modifier</button>
-                    <button class="supp">Supprimer</button>
-                </div>
-                <div class="promo2">
-                    <H2>PROMO 2</H2>
-                    <button class="detail">Détails</button>
-                    <button class="modif">Modifier</button>
-                    <button class="supp">Supprimer</button>
-                </div>
-                <div class="promo3">
-                    <H2>PROMO 3</H2>
-                    <button class="detail">Détails</button>
-                    <button class="modif">Modifier</button>
-                    <button class="supp">Supprimer</button>
-                </div>
+        </div>
+        <div id="promo-detail-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" id="close-detail">&times;</span>
+                <h2>Détails de la promotion</h2>
+                <p><strong>Nom:</strong> <span id="detail-name"></span></p>
+                <p><strong>Date de début:</strong> <span id="detail-start"></span></p>
+                <p><strong>Date de fin:</strong> <span id="detail-end"></span></p>
+                <p><strong>Description:</strong> <span id="detail-description"></span></p>
             </div>
+        </div>
 
-            <div>
-                <button id="list-btn2">Ajouter Promotion</button>
-            </div>
 
-            <div id="promo-modal" class="modal">
-                <div class="modal-content">
-                    <span class="close-btn">&times;</span>
-                    <form id="promo-form">
-                        <label for="promo-name">Nom de la promotion: </label><br>
-                        <input type="text" id="promo-name" name="name" required><br>
-                        <label for="name">Date de début: </label><br>
-                        <input type="date" id="start-date" name="startDate" required><br>
-                        <label for="name">Date de fin: </label><br>
-                        <input type="date" id="end-date" name="endDate" required><br>
-                        <label for="name">Description de la formation: </label><br>
-                        <input type="text" id="formation-description" name="formationDescription" required><br>
-                        <button type="submit">Ajouter</button>
-                    </form>
-                </div>
-            </div>
+        <div class="accueil"></div>
 
-            <div class="accueil"></div>
-
-            <a href="../index.html"><button id="list-btn">Retour Accueil</button></a>
-    </div>
+        <a href="../index.html"><button id="list-btn">Retour Accueil</button></a>
+        </div>
 
     </main>
 
-    <script src="promos.js"></script>
 
-    </div>
 
     <footer>
         <div class="contact">
@@ -79,6 +71,8 @@
             <p>Numéro : 06 01 02 03 04</p>
         </div>
     </footer>
+
+    <script src="promos.js"></script>
 </body>
 
 </html>
