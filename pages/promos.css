@@ -141,9 +141,18 @@ header img {
     width: 150px;
     height: 50px;
     cursor: pointer;
-
 }
 
+#liste-eleves{
+    border-radius: 10px;
+    font-size: 25px;
+    background-color: rgb(8, 8, 110);
+    color: rgb(192, 187, 187);
+    cursor: pointer;
+}
+#liste-eleves:hover{
+    background-color: rgb(59, 108, 254);
+}
 
 .modif:hover {
     background-color: rgb(59, 108, 254);

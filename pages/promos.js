@@ -1,7 +1,7 @@
 const urlBase = "http://146.59.242.125:3009/";
 const token = "67dd4e32-9b4e-4a4c-add6-131a1967fc41";
 const addForm = document.querySelector('#promo-form');
-let currentPromoId = null; // Si null → création, sinon modification
+let currentPromoId = null;
 
 async function getPromos() {
     const response = await fetch(urlBase + "promos", {
@@ -75,21 +75,16 @@ document.getElementById('close-detail').addEventListener('click', function () {
     document.getElementById('promo-detail-modal').style.display = 'none';
 });
 
-
 function handleModify(promoId, promoDiv, promoData) {
-    // On passe en mode modification
     currentPromoId = promoId;
     
-    // Préremplir la modale avec les informations existantes
     document.querySelector('#promo-name').value = promoData.name;
     document.querySelector('#promo-start').value = promoData.startDate || "";
     document.querySelector('#promo-end').value = promoData.endDate || "";
     document.querySelector('#promo-description').value = promoData.formationDescription || "";
     
-    // Modifier le texte du bouton de soumission pour indiquer "Modifier"
     document.querySelector('#promo-form button[type="submit"]').textContent = "Modifier";
     
-    // Ouvrir la modale
     document.getElementById('promo-modal').style.display = 'block';
 }
 
@@ -133,7 +128,6 @@ function handleDelete(promoId, promoDiv) {
     });
 }
 
-// Gestion globale de la soumission du formulaire
 addForm.addEventListener('submit', async (e) => {
     e.preventDefault();
  
@@ -145,7 +139,6 @@ addForm.addEventListener('submit', async (e) => {
     };
 
     if (currentPromoId) {
-        // Mode modification → requête PUT
         const response = await fetch(urlBase + "promos/" + currentPromoId, {
             method: "PUT",
             headers: {
@@ -155,16 +148,14 @@ addForm.addEventListener('submit', async (e) => {
             body: JSON.stringify(data)
         });
         if (response.ok) {
-            // Ici, vous pouvez mettre à jour le DOM (par exemple, rechercher l'élément correspondant et mettre à jour le titre)
-            // Pour simplifier, on recharge toute la liste ou on peut mettre à jour directement le titre
-            // Exemple simple : on recharge la page
+            
             window.location.reload();
         }
         currentPromoId = null;
-        // Remettre le bouton en mode "Ajouter"
+ 
         document.querySelector('#promo-form button[type="submit"]').textContent = "Ajouter";
     } else {
-        // Mode création → requête POST
+  
         const response = await fetch(urlBase + "promos", {
             method: "POST",
             headers: {
