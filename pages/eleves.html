@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./eleves.css">
+    <title>Gestion des élèves</title>
+</head>
+
+<body>
+    <header>
+        <h1><img src="../assets/images/logo ecole.png" alt="logo ecole"></h1>
+        <div>
+            <a href="../pages/promos.html"><button id="list-btn">Liste des promotions</button></a>
+        </div>
+    </header>
+    <main>
+        <div class="titrebtn">
+            <h2>Gestion des élèves</h2>
+        <button id="addEleveBtn">Ajouter un élève</button>
+        </div>
+        
+        <section id="eleveSection">
+            <ul id="eleve-list"></ul>
+        </section>
+
+        <div id="modal-ajouter" class="modal">
+            <div class="modal-content">
+                <span id="close-modal" class="close">&times;</span>
+                <h3>Ajouter un élève</h3>
+                <form id="addEleveForm">
+                    <label for="firstName"><strong>Prénom :</strong></label>
+                    <input id="firstName" type="text"><br>
+
+                    <label for="lastName"><strong>Nom :</strong></label>
+                    <input id="lastName" type="text"><br>
+
+                    <label for="age"><strong>Age :</strong></label>
+                    <input id="age" type="number"><br>
+
+                    <label for="avatar"><strong>Avatar :</strong></label>
+                    <input id="avatar" type="file">
+
+                    <button type="submit">Ajouter</button>
+                </form>
+            </div>
+        </div>
+        <div id="modal-message" class="modal">
+            <div class="modal-content">
+                <span id="close-modal" class="close">&times;</span>
+                <p id="modal-message-text"></p>
+                <button id="modal-confirm">Confirmer</button>
+                <button id="modal-cancel">Annuler</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="contact">
+            <a href="https://maps.app.goo.gl/3tfzaLV7CTbCqZ7YA" target="_blank">
+                <p>📍 Adresse : 155 Rue du Dirigeable, 13400 Aubagne 📍</p>
+            </a>
+            <p>Numéro : 06 01 02 03 04</p>
+        </div>
+    </footer>
+    <script src="./eleves.js"></script>
+</body>
+
+</html>

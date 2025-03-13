@@ -13,6 +13,7 @@ header{
 header img{
     max-width: 100%;
     height: auto;
+    -webkit-user-drag: none;
 }
 #list-btn{
     width: 200px;
@@ -40,6 +41,7 @@ h2{
     display: flex;
     border: 2px solid rgb(9, 9, 96);
     border-radius: 15px;
+    box-shadow: -1px 3px 15px 1px rgba(0,0,0,0.45);
     text-align: center;
     align-items: center;
     flex-direction: column;
