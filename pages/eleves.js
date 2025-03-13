@@ -140,7 +140,6 @@ function openModal(message, onConfirm = null) {
         if (onConfirm) onConfirm(); // Si une fonction de confirmation est fournie, l'exécuter
         closeModal(); // Fermer la modal après la confirmation
     };
-
     modalCancelButton.onclick = closeModal; // Fermer la modal si l'utilisateur annule
 }
 
@@ -148,6 +147,9 @@ function openModal(message, onConfirm = null) {
 function closeModal() {
     modal.style.display = 'none'; // Cacher la modal
 }
-
 // Charger les élèves d'une promotion (remplace le ID par celui sélectionné par ton binôme)
 loadEleves(currentPromotionId); // À remplacer par la promotion sélectionnée
+
+let url = new URL(window.location.href);
+let test = url.searchParams.get("test");
+console.log(test);
