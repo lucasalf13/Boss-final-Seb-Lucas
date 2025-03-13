@@ -77,7 +77,7 @@ addEleveForm.addEventListener('submit', async (event) => {
     const avatar = document.getElementById('avatar').files[0]
 
     try {
-        const response = await fetch(urlBase + `promos/${currentPromotionId}/eleves`, {
+        const response = await fetch(urlBase + `promos/${currentPromotionId}`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${authToken}`,
