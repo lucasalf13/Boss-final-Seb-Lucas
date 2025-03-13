@@ -67,7 +67,9 @@ function handleDetail(promoData) {
     document.getElementById('detail-start').textContent = promoData.startDate || "Non spécifié";
     document.getElementById('detail-end').textContent = promoData.endDate || "Non spécifié";
     document.getElementById('detail-description').textContent = promoData.formationDescription || "Aucune description";
-
+    document.querySelector('#liste-eleves').addEventListener('click', ()=>{
+        window.location.href = "./eleves.html?promoId="+promoData._id
+    })
     document.getElementById('promo-detail-modal').style.display = 'block';
 }
 

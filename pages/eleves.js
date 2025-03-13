@@ -1,4 +1,4 @@
-const authToken = "d4024b64-58b0-4cc9-a496-428099b18761";
+const authToken = "67dd4e32-9b4e-4a4c-add6-131a1967fc41";
 const urlBase = "http://146.59.242.125:3009/";
 
 const modal = document.getElementById('modal-message'); // Modal de message
@@ -14,8 +14,7 @@ let currentPromotionId = 1; // ID de la promotion (en attente de la sélection d
 
 // Affichage des élèves de la promotion
 async function loadEleves(promotionId) {
-    try {
-        const response = await fetch(urlBase + `promos/${promotionId}/eleves`, {
+        const response = await fetch(urlBase + `promos/${promotionId}`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${authToken}`,
@@ -26,18 +25,16 @@ async function loadEleves(promotionId) {
             throw new Error('Échec de la récupération des élèves');
         }
 
-        const eleves = await response.json();
-        displayEleves(eleves);
-    } catch (error) {
-        openModal('Erreur lors de la récupération des élèves');
-    }
+        const promo = await response.json();
+        displayEleves(promo);
+ 
 }
 
 // Affichage de la liste des élèves dans le DOM
-function displayEleves(eleves) {
+function displayEleves(promo) {
     eleveList.innerHTML = ''; // Réinitialiser la liste avant d'afficher
 
-    eleves.forEach(eleve => {
+    promo.students.forEach(eleve => {
         const li = document.createElement('li');
         li.textContent = `${eleve.firstName} ${eleve.lastName} (${eleve.age}) ${eleve.avatar}`;
 
@@ -86,7 +83,7 @@ addEleveForm.addEventListener('submit', async (event) => {
                 'Authorization': `Bearer ${authToken}`,
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ firstName, lastName, age,  avatar }) // Données de l'élève
+            body: JSON.stringify({ firstName, lastName, age, avatar }) // Données de l'élève
         });
 
         if (!response.ok) {
@@ -148,8 +145,10 @@ function closeModal() {
     modal.style.display = 'none'; // Cacher la modal
 }
 // Charger les élèves d'une promotion (remplace le ID par celui sélectionné par ton binôme)
-loadEleves(currentPromotionId); // À remplacer par la promotion sélectionnée
+loadEleves(getId()); // À remplacer par la promotion sélectionnée
 
-let url = new URL(window.location.href);
-let test = url.searchParams.get("test");
-console.log(test);
+function getId() {
+    let url = new URL(window.location.href);
+    let id = url.searchParams.get("promoId");
+    return id
+}
