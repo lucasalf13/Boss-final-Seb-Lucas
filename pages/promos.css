@@ -259,6 +259,19 @@ img {
     height: auto;
 }
 
+#promo-detail-modal{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centre la modale */
+    width: 600px;
+    height:max-content;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
 
 #promo-modal{
 display: none;
