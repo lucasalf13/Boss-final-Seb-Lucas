@@ -13,7 +13,7 @@ let currentPromotionId = getId();
 
 // Affichage des élèves de la promotion
 async function loadEleves(promotionId) {
-        const response = await fetch(urlBase + `promos/${currentPromotionId}/students`, {
+        const response = await fetch(urlBase + "promos/" + currentPromotionId + "/students", {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${authToken}`,
@@ -57,6 +57,7 @@ function displayEleves(promo) {
     
         eleveList.appendChild(li);
     });
+    loadEleves(getId()); 
 }    
 
 // Créer un bouton pour modifier ou supprimer un élève
@@ -101,7 +102,7 @@ addEleveForm.addEventListener('submit', async (event) => {
     try {
         // Requête POST pour envoyer les données à l'API
 
-        const response = await fetch(urlBase + `promos/${currentPromotionId}/students`, {
+        const response = await fetch(urlBase + "promos/" + currentPromotionId + "/students", {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${authToken}`,
@@ -169,9 +170,6 @@ function openModal(message, onConfirm = null) {
 function closeModal() {
     modal.style.display = 'none'; // Cacher la modal
 }
-// Charger les élèves d'une promotion (remplace le ID par celui sélectionné par ton binôme)
-loadEleves(getId()); // À remplacer par la promotion sélectionnée
-
 function getId() {
     let url = new URL(window.location.href);
     let id = url.searchParams.get("promoId");    
