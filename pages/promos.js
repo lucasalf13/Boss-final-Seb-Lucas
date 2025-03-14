@@ -64,8 +64,8 @@ function displayPromos(data) {
 function handleDetail(promoData) {
    
     document.getElementById('detail-name').textContent = promoData.name;
-    document.getElementById('detail-start').textContent = promoData.startDate || "Non spécifié";
-    document.getElementById('detail-end').textContent = promoData.endDate || "Non spécifié";
+    document.getElementById('detail-start').textContent = promoData.startDate.split('T')[0] || "Non spécifié";
+    document.getElementById('detail-end').textContent = promoData.endDate.split('T')[0] || "Non spécifié";
     document.getElementById('detail-description').textContent = promoData.formationDescription || "Aucune description";
     document.querySelector('#liste-eleves').addEventListener('click', ()=>{
         window.location.href = "./eleves.html?promoId="+promoData._id
