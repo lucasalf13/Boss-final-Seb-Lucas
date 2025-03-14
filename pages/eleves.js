@@ -13,7 +13,7 @@ let currentPromotionId = getId();
 
 // Affichage des élèves de la promotion
 async function loadEleves(promotionId) {
-        const response = await fetch(urlBase + "promos/" + currentPromotionId + "/students", {
+        const response = await fetch(urlBase + "promos/" + getId(), {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${authToken}`,
@@ -25,6 +25,7 @@ async function loadEleves(promotionId) {
         }
 
         const promo = await response.json();
+        console.log(promo);
         
         displayEleves(promo);
  
@@ -57,7 +58,6 @@ function displayEleves(promo) {
     
         eleveList.appendChild(li);
     });
-    loadEleves(getId()); 
 }    
 
 // Créer un bouton pour modifier ou supprimer un élève
@@ -115,7 +115,7 @@ addEleveForm.addEventListener('submit', async (event) => {
             throw new Error('Échec de l\'ajout de l\'élève');
         }
 
-        const newEleve = await response.json(); // Récupérer l'élève ajouté depuis la réponse
+        // const newEleve = await response.json(); // Récupérer l'élève ajouté depuis la réponse
         loadEleves(); // Recharger les élèves après l'ajout
         modalAjout.style.display = 'none'; // Fermer la modal d'ajout
         openModal('Élève ajouté avec succès'); // Afficher un message de succès
